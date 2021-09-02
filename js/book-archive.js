@@ -14,11 +14,10 @@ const searchBook = () => {
       } else {
         if (data.docs.length > 0) {
           document.getElementById(
-            "error-message"
+            "total-result"
           ).innerHTML = `Total-Result: ${data.num_found}`;
         } else {
-          document.getElementById("error-message").innerHTML =
-            "No Result Found";
+          document.getElementById("total-result").innerHTML = "No Result Found";
         }
       }
     });
@@ -29,17 +28,16 @@ const displaySearchResult = (docs) => {
   searchResult.textContent = "";
   docs.forEach((doc) => {
     const div = document.createElement("div");
-    // console.log(doc);
     const imageSource = `https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg`;
     div.classList.add("col");
     div.innerHTML = `
         <div class="card h-100">
           <img src=${imageSource} class="card-img-top" style='height:300px' alt="..." />
           <div class="card-body">
-            <h4 class="card-title text-success">book name: ${doc.title}</h4>
-            <h6 class="card-title">author name: ${doc.author_name}</h6>
-            <h6 class="card-title">publisher: ${doc.publisher}</h6>
-            <h6 class="card-title">1st published: ${doc.first_publish_year}</h6>
+            <h3 class="card-title text-warning">${doc.title}</h3>
+            <h6 class="card-title"><span class="text-info fs-5">Author name:</span> ${doc.author_name}</h6>
+            <h6 class="card-title"><span class="text-info fs-5">Publisher:</span> ${doc.publisher}</h6>
+            <h6 class="card-title"><span class="text-info fs-5">1st published:</span> ${doc.first_publish_year}</h6>
           </div>
         </div>
         `;

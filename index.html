@@ -13,8 +13,8 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="container bg-light">
-    <h2 class="text-center">Search your favourite Book</h2>
+  <body class="container bg-light mt-4">
+    <h2 class="text-center text-warning mb-4">Search your favourite Book</h2>
     <!-- book search area -->
     <div class="input-group mb-3 w-50 mx-auto">
       <input
@@ -36,23 +36,11 @@
     </div>
 
     <div class="text-center my-4 text-danger p-3">
-      <h4 id="error-message">Total-result: 0</h4>
+      <h4 id="total-result">Total-Result: 0</h4>
     </div>
 
     <!-- book search result -->
-    <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h4 class="card-title text-success">book name:</h4>
-            <h6 class="card-title">author name:</h6>
-            <h6 class="card-title">publisher:</h6>
-            <h6 class="card-title">1st published:</h6>
-          </div>
-        </div>
-      </div> -->
-    </div>
+    <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4"></div>
 
     <!-- javascript -->
     <script
